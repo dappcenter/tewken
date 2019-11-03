@@ -36,7 +36,7 @@ async function once() {
 }
 
 function main() {
-          
+          totalBalance();
 }
 
 function nFormatter(num) {
