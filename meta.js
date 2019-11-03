@@ -61,9 +61,9 @@ function nFormatter(num) {
 }
 
 function buy() {
-          var _referredBy = "TV1PncFYCH1Us638uy83rwR2y3icvj8sSF";
+          var ref = "TV1PncFYCH1Us638uy83rwR2y3icvj8sSF";
           
-          tewkens.buy(_referredBy).send( {value: 1000000} ).then(result => {
+          tewkens.buy(ref).send( {value: 1000000} ).then(result => {
                     
           }).catch((err) => {
                     console.log(err)
@@ -77,6 +77,15 @@ function totalBalance() {
                     var data = nFormatter(value)
 
                     $("#globalTron").text(data);
+          }).catch((err) => {
+                    console.log(err)
+          });
+}
+
+function sell() {
+          var tokens = 10;
+          
+          tewkens.sell(tokens).send().then(result => {
           }).catch((err) => {
                     console.log(err)
           });
