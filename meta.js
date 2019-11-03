@@ -62,7 +62,7 @@ function nFormatter(num) {
 
 function buy() {
           var ref = $('#ref').val();
-          var val = $('#spend').val();
+          var val = $('#spend').val() * 1000000;
           
           console.log(ref);
           console.log(val);
