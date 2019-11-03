@@ -24,7 +24,7 @@ window.onload = function() {
 
 async function once() {
           tronWeb = window.tronWeb;
-          tycoon = await tronWeb.contract().at("TPexUXMe63YHcARbMnhDRdcmsk3SWJ1fWN");
+          tycoon = await tronWeb.contract().at("TAtpSCSsbFGsTNci6MGZTBVBjVcBc3UGdG");
 
           currentAddr = tronWeb.defaultAddress['base58'];
           console.log(currentAddr);
@@ -36,11 +36,7 @@ async function once() {
 }
 
 function main() {
-          getAllMyRv();
           
-          myBalance();
-          
-          globalTron();
 }
 
 function nFormatter(num) {
@@ -73,62 +69,5 @@ function getAllMyRv() {
                     all = nFormatter(all);
                   
                     $('#myRv').text(all);
-          });
-}
-
-function addRv(myRv){        
-          var rv100 = (myRv / 2e6);
-        
-          var value = (rv100).toFixed(0);
-         
-          var data = value.toString();
-          $('#sellprv').val(data);
-}
-
-function sell() {
-          var value = $('#sellprv').val();
-          
-          tycoon.Sell(value).send().then(result => {
-                    callback();
-          }).catch((err) => {
-                    console.log(err)
-          });
-}
-
-function withdraw() {
-          tycoon.Withdraw().send().then(result => {
-                    callback();
-          }).catch((err) => {
-                    console.log(err)
-          });
-}
-
-function myBalance() {
-          tycoon.Balance().call().then(result => {
-                    var balance = result.toString();
-                    var value = balance/1e6;
-                    var data = nFormatter(value);
-                    
-                    $("#tron").val(data);
-          });
-}
-
-function globalTron() {
-          tycoon.tron().call().then(result => {
-                    var balance = result.toString();
-                    var value = balance/1e6;
-                    var data = nFormatter(value)
-
-                    $("#globalTron").text(data);
-    });
-}
-
-function claimBasic() {
-          var code = $("#claim").val();
-          
-          tycoon.ClaimBasic(code).send().then(result => {
-                    callback();
-          }).catch((err) => {
-                    console.log(err)
           });
 }
