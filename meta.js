@@ -24,7 +24,7 @@ window.onload = function() {
 
 async function once() {
           tronWeb = window.tronWeb;
-          tewkens = await tronWeb.contract().at("TAtpSCSsbFGsTNci6MGZTBVBjVcBc3UGdG");
+          tewkens = await tronWeb.contract().at("TCSw8e8M6BRUYvh1vHhHZCZPiiBrcDjv7R");
 
           currentAddr = tronWeb.defaultAddress['base58'];
           console.log(currentAddr);
