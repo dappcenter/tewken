@@ -77,7 +77,7 @@ function totalBalance() {
                     var data = nFormatter(value)
 
                     $("#globalTron").text(data);
-          }).catch(err) => {
+          }).catch((err) => {
                     console.log(err)
-          };
+          });
 }
