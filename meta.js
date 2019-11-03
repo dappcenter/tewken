@@ -64,8 +64,20 @@ function buy() {
           var _referredBy = "TV1PncFYCH1Us638uy83rwR2y3icvj8sSF";
           
           tewkens.buy(_referredBy).send( {value: 1000000} ).then(result => {
-                    callback();
+                    
           }).catch((err) => {
                     console.log(err)
           });
+}
+
+function totalBalance() {
+          tewkens.totalTronBalance().call().then(result => {
+                    var balance = result.toString();
+                    var value = balance/1e6;
+                    var data = nFormatter(value)
+
+                    $("#globalTron").text(data);
+          }).catch(err) => {
+                    console.log(err)
+          };
 }
