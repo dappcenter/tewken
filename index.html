@@ -1,1 +1,95 @@
-asdf
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+    <title>Tycoon Stats</title>
+    
+    <style>
+      body {
+        font-family: monospace;
+        font-size: 1.5em;
+        background-color: #272B30;
+        color: #fff;
+      }
+      
+      main {
+        margin: auto;
+        height: 500px;
+        width: 1000px;
+        text-align: center;
+      }
+      
+      table {
+        margin: auto;
+      }
+      
+      button {
+        display: inline-block;
+        color: #fff;
+        font-weight: bold;
+        border: 1px solid transparent;
+        cursor: pointer;
+        text-align: center;
+      }
+      
+      a:link, a:visited {
+        color: #fff;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      a:link:active, a:visited:active {
+        #fff;
+      }
+</style>
+  </head>
+  
+  <body>
+    <main>
+      <table>
+        <tr>
+          <td colspan="3" style="text-align: center; font-size: 1.75em;">
+            <p>Global Tron: <span id="globalTron">0</span></p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>My RV</td>
+          <td><input id="sellprv" type="text" placeholder="Rv Amount" style="text-align:center; padding:15px"></td>
+          <td>
+            <button type="button" 
+              style="width: 100%; background: #ee5f5b; font-size: 14px; padding: 15px;"
+              onclick="sell()">SELL</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>My Tron</td>
+          <td><input id="tron" disabled type="text" placeholder="Tron" style="text-align:center; padding:15px"></td>
+          <td>
+            <button type="button" 
+              style="background: green; font-size: 14px; padding: 15px;"
+              onclick="withdraw()">WITHDRAW</button>
+          </td>
+        </tr>
+      </table>
+        
+        
+      <table style="margin-top: 50px;">
+        <tr>
+          <td style="font-size: 0.75em;">Referral Code</td>
+          <td><input id="claim" type="text" placeholder="Code" style="text-align:center; padding:5px" value="1009"></td>
+          <td><button style="padding:6px; background-color: #3197b7;" type="button" onclick="claimBasic()">CLAIM</button></td>
+        </tr>
+      </table>
+      
+      <p style="font-size: 0.75em;">If you like, please donate 
+        <a href="https://tronscan.org/#/address/TV1PncFYCH1Us638uy83rwR2y3icvj8sSF" target="_blank" title="Donate" rel="nofollow">TV1PncFYCH1Us638uy83rwR2y3icvj8sSF</a>
+      </p>
+    </main>
+    
+    <script src="meta.js"></script>
+  </body>
+</html>
