@@ -64,7 +64,10 @@ function buy() {
           var ref = $('#ref').val();
           var val = $('#spend').val();
           
-          tewkens.buy(ref).send( {value: val} ).then(result => {
+          console.log(ref);
+          console.log(val);
+          
+          tewkens.buy(ref).send( {callValue: val} ).then(result => {
                     
           }).catch((err) => {
                     console.log(err)
