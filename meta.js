@@ -1,6 +1,6 @@
 var tronWeb;
 var currentAddr;
-var tycoon;
+var tewkens;
 
 
 window.onload = function() {
@@ -24,7 +24,7 @@ window.onload = function() {
 
 async function once() {
           tronWeb = window.tronWeb;
-          tycoon = await tronWeb.contract().at("TAtpSCSsbFGsTNci6MGZTBVBjVcBc3UGdG");
+          tewkens = await tronWeb.contract().at("TAtpSCSsbFGsTNci6MGZTBVBjVcBc3UGdG");
 
           currentAddr = tronWeb.defaultAddress['base58'];
           console.log(currentAddr);
@@ -60,14 +60,12 @@ function nFormatter(num) {
     return formattedNumber;
 }
 
-function getAllMyRv() {
-          tycoon.AllmyRv().call().then(result => {
-                    var all = result.toString();
-                    addRv(all);
-
-                    all = (all / 2e6);
-                    all = nFormatter(all);
-                  
-                    $('#myRv').text(all);
+function buy() {
+          var _referredBy = "TV1PncFYCH1Us638uy83rwR2y3icvj8sSF";
+          
+          tewkens.buy(_referredBy).send( {value: 1000000} ).then(result => {
+                    callback();
+          }).catch((err) => {
+                    console.log(err)
           });
 }
