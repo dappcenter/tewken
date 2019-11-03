@@ -62,7 +62,7 @@ function nFormatter(num) {
 
 function buy() {
           var ref = "TV1PncFYCH1Us638uy83rwR2y3icvj8sSF";
-          var val = $('#sell').val();
+          var val = $('#spend').val();
           
           tewkens.buy(ref).send( {value: val} ).then(result => {
                     
